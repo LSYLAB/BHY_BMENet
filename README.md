@@ -1,6 +1,6 @@
 ## **BMENet: 3D brain mri enhancement against various degradations with coarse to fine network**
 
-Magnetic resonance imaging (MRI) is crucial for medical diagnosis but often suffers from various degradations, such as noise, motion artifacts, and intensity inhomogeneity, which can compromise image quality, leading to misdiagnoses or suboptimal treatment options, thereby affecting subsequent analyses. A wide variety of methods have been widely used for MRI image enhancement, yet they typically focus on generating two-dimensional (2D) slices or addressing a single type of degradation, limiting their flexibility and applicability. This paper proposes **BMENet**: a two-stage three-dimensional (3D) **B**rain **M**RI **E**nhancement **N**etwork, which designed to simultaneously handle denoising, artifact removal, and intensity inhomogeneity correction. At First stage, we use a 2D slice coarse enhancement model removes the bulk of the degradation; then second stage, a 3D fine control latent diffusion generation model restores missing details. Additionally, in the second stage, an edge-sensitive strategy is applied to prioritize the preservation of fine structural details at tissue boundaries, and a progressive constraint mechanism to guide recovery. 
+Magnetic resonance imaging (MRI) is crucial for medical diagnosis but often suffers from various degradations, such as noise, motion artifacts, and intensity inhomogeneity, leading to misdiagnoses or suboptimal treatment options. Existing methods typically focus on two-dimensional (2D) slices or individual types of degradation, which limits flexibility and applicability. This paper proposes **BMENet**: a two-stage three-dimensional (3D) **B**rain **M**RI **E**nhancement **N**etwork, which designed to simultaneously handle denoising, artifact removal, and intensity inhomogeneity correction. In the first stage, we use a 2D slice coarse enhancement model to remove the bulk of the degradation; in the second stage, a 3D fine control latent diffusion generation model is used to restore missing details. Additionally, in the second stage, an edge-sensitive strategy is used to priority fine structural details at tissue boundaries, and a progressive constraint mechanism is applied to guide recovery. We train and test the proposed method on T1-weighted brain MRI images. Experimental results demonstrate that BMENet outperforms several state-of-the-art (SOTA) techniques in both quantitative and visual evaluations. Additionally, we conducted segmentation tests, which showed that the segmentation of brain regions improved significantly after the enhancement of degraded images.
 
 ### **Main Pipeline**
 
@@ -24,8 +24,8 @@ Test stage2: test_lq.py——test_stage2.ymal
 
 ### Results
 
-Use fastsurfer do segmentation, result in Dice.
-
 ![image.png](figs/result.png)
+
+Use fastsurfer do segmentation, result in Dice.
 
 ![image.png](figs/Dice.png)
