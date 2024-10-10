@@ -27,5 +27,4 @@ Test stage2: test_lq.py——test_stage2.ymal
 ![image.png](figs/result.png)
 
 Use fastsurfer do segmentation, result in Dice.
-
 ![image.png](figs/Dice.png)
